@@ -40,7 +40,7 @@ The program prints the results as emoji icons.
 ```
 :scissors:
 ```
-
+:scissors:
 #### Feature 3
 
 The program can cater three or more rounds and prints the score after the game.
