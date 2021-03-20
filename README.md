@@ -1,70 +1,87 @@
-## Midterm Output
+import 'dart:math';
+import 'dart:io'; 
 
-Papel, Gunting, Bato! Using Dart as the programming language, create a classic Filipino game by entering values in the command line.
 
-The program (bot) should ask:
-```
-Papel, Gunting, Bato! What's your Pick? 
-```
 
-The user inputs a keyword or value:
-```
-Bato 
-```
+void main() {
 
-The bot picks a random choice then prints the output:
-```
-Bot: Gunting - You Win!
-```
 
-### Optional Features
+int score=0;
+int round= 1;
 
-Features in this section are advanced, but you'll get plus points for implementing any of these.
+for( var i = 3; i >= 1; i-- ) 
+{
+Random random = new Random();
+int randomNumber = random.nextInt(3)+(1); 
+print ('round $round');
+print('Gunting, Papel,Bato.');
+print ('Ano ang inyong pambato?');
+String pambato= stdin.readLineSync(); 
+print ('--------------------');
 
-#### Feature 1
+   if(pambato == 'bato'|| pambato== 'Bato')
+      {
+        if(randomNumber==1)
+        {
+         print( '$pambato vs Gunting ');
+          print ('You Win');
+          score = score+1;
+        }
+        else if(randomNumber==2)
+        {
+          print( '$pambato vs Bato ');
+          print ('Tie');
+        }
+        else
+        {
+          print( '$pambato vs Papel ');
+          print ('You Lose');
+        }
+      }
 
-The program can accept values of any of the following text cases (UPPERCASE, lowercase, TitleCase)
-```
-Bato 
-```
-```
-gunting 
-```
-```
-PAPEL 
-```
+  if(pambato == 'gunting'|| pambato== 'Gunting')
+      {
+        if(randomNumber==1)
+        {
+          print( '$pambato vs Gunting ');
+          print ('Tie');
+        }
+        else if(randomNumber==2)
+        {
+          print( '$pambato vs Bato ');
+          print ('You Lose');
+        }
+        else
+        {
+          print( '$pambato vs Papel ');
+          print ('You Win');
+          score=score+1;
+        }
+      }
 
-#### Feature 2
+if(pambato == 'papel'|| pambato== 'Papel')
+      {
+        if(randomNumber==1)
+        {
+          print( '$pambato vs Gunting ');
+          print ('You Lose');
+        }
+        else if(randomNumber==2)
+        {
+          print( '$pambato vs Bato ');
+          print ('You Win');
+          score=score+1;
+        }
+        else
+        {
+          print( '$pambato vs Papel ');
+          print ('Tie ');
+        }
+      }  
 
-The program prints the results as emoji icons.
-```
-:scissors:
-```
-:scissors:
-#### Feature 3
-
-The program can cater three or more rounds and prints the score after the game.
-```
-Round 1:
-Papel, Gunting, Bato! What's your Pick? 
-
-Round 2:
-Papel, Gunting, Bato! What's your Pick? 
-
-...
-
-You Win! Bot: 1, You: 2
-```
-
-### Output Submission
-
-1. Create a repository in your GitHub account named ```dart-midterm-output```.
-1. Upload your code in that repository using Git or using the live editor in your mobile/tablet device.
-1. Email your repository link to mjsolidarios@wvsu.edu.ph, subject: $yourlastname-dart-midterm-output, replace $yourlastname with your own. 
-
-### Other Notes
-
-* Reuse and building upon ideas or code are major parts of modern software development. As a professional programmer you will never write anything from scratch. This class is structured such that all solutions are public. You are encouraged to learn from the work of your peers. I won't hunt down people who are simply copying-and-pasting solutions, because without challenging themselves, they are simply wasting their time taking this class.
-* Making a flow diagram before coding will help you a lot.
-* Be creative! You can innovate and formulate better user interactions, solutions or program outputs. 
-
+round=round+1;
+print ('--------------------');
+print('score $score' );
+print ('--------------------');
+}
+}
